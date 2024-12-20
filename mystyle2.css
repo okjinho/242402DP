@@ -1,0 +1,1532 @@
+
+
+*{
+    margin: 0px;
+    padding: 0px;
+    user-select: none;
+}
+
+
+
+body{
+    background-color: rgb(0, 0, 0);
+    margin: 0px;
+    background-image: url('/image/background/BG-07-07.png'); /* 배경 이미지 경로 */
+    background-size: cover; /* 화면에 꽉 차게 비율 유지 */
+    background-repeat: no-repeat; /* 이미지 반복 방지 */
+    background-position: center center; /* 이미지 중앙 정렬 */
+    background-attachment: fixed; /* 스크롤해도 이미지 고정 */
+}
+
+/*@@@@@@@@메뉴박스@@@@@@@@*/
+
+#TopTabContainer{
+    width: 90%;
+    height: 100%;
+    margin: auto;
+    order: 0;
+}
+
+/*메뉴 뒷 배경 박스*/
+.Top{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(40, 40, 40);
+    align-items: center;
+    padding: 12px 20px;
+    border-radius: 15px;
+}
+
+/*메뉴텍스트*/
+.topTab{
+    width: 30%;
+    margin: 3px;
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    font-size: clamp(18px, 1vw, 40px);
+    gap: 30%;
+    font-weight: bold;
+    white-space: nowrap;
+    margin-left: -30%;
+}
+
+/*선택 시 나오는 네모박스*/
+.topTab li{
+    flex: 1;
+    text-align: center;
+    padding: 8px 10%;
+    border-radius: 10px;
+    position: relative; /* 밑줄을 제어하기 위한 설정 */
+}
+
+.topTab li::after {
+    content: ''; /* 비어있는 가상 요소 */
+    position: absolute;
+    bottom: -20%;
+    left: 25%;
+    width: 0%;
+    height: 2px; /* 밑줄 두께 */
+    background-color: white; /* 밑줄 색상 */
+    transition: width 0.3s ease; /* 부드러운 확장 효과 */
+}
+
+/* 마우스 오버 시 밑줄 확장 */
+.topTab li:hover::after {
+    width: 50%; /* 밑줄을 가로 전체로 확장 */
+    bottom: -20%;
+    left: 25%;
+}
+
+
+.topTab li a{
+    color: white;
+    text-decoration: none;
+}
+
+/*슬라이드*/
+
+.Slider_Box{
+    width: 90%;
+    height: 40%;
+    margin-left: 5%;
+    overflow: hidden;
+    display: flex;
+    position: relative;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.Inner_Slider_Box {
+    display: flex; /* 이미지를 한 줄에 나란히 배치 */
+    width: calc(1420px * 3); /* 총 슬라이드 너비 (이미지 개수만큼) */
+    transition: transform 0.5s ease-in-out; /* 부드러운 전환 효과 */
+}
+
+.Inner_Slider_Box img {
+    flex-shrink: 0;
+    width: 100%; /* 컨테이너의 너비에 맞춤 */
+    height: 100%; /* 컨테이너의 높이에 맞춤 */
+    object-fit: contain; /* 이미지 비율 유지 */
+    border-radius: 10px; /* 둥근 모서리 (선택 사항) */
+}
+
+.Slider_img_1{
+    width: 1420px;
+    height: 100%;
+    flex-shrink: 0
+}
+.Slider_img_2{
+    width: 1420px;
+    height: 100%;
+    flex-shrink: 0
+}
+.Slider_img_3{
+    width: 1420px;
+    height: 100%;
+    flex-shrink: 0
+}
+
+/*@@@@@@@@컨텐츠1@@@@@@@@*/
+.star5_2 {
+    position: absolute; /*얘 덕분에 위치 변화 없다.*/
+    width: 0%;
+    display: flex;
+    justify-content: center; /* 수평 중앙 정렬 */
+    align-items: center; /* 수직 중앙 정렬 */
+    width: 40%; /* 부모 너비에 맞춤 */
+    margin-left: calc(-60% + 20px);
+    top: 67%;
+}
+
+.star4_2 {
+    position: absolute; /*얘 덕분에 위치 변화 없다.*/
+    width: 0%;
+    display: flex;
+    justify-content: center; /* 수평 중앙 정렬 */
+    align-items: center; /* 수직 중앙 정렬 */
+    width: 40%; /* 부모 너비에 맞춤 */
+    margin-left: calc(-60% + 20px);
+    top: 67%;
+}
+
+
+.sticker1 {
+    position: absolute; /*얘 덕분에 위치 변화 없다.*/
+    display: flex;
+    justify-content: left; /* 수평 중앙 정렬 */
+    align-items: left; /* 수직 중앙 정렬 */
+    width: 13%; /* 부모 너비에 맞춤 */
+    margin-left: calc(13% + 20px);
+    top: 3%;
+}
+
+.sticker2 {
+    position: absolute; /*얘 덕분에 위치 변화 없다.*/
+    display: flex;
+    justify-content: left; /* 수평 중앙 정렬 */
+    align-items: left; /* 수직 중앙 정렬 */
+    width: 17%; /* 부모 너비에 맞춤 */
+    margin-left: calc(83% + 20px);
+    top: -2%;
+}
+
+.sticker1_content2{
+    position: absolute; /*얘 덕분에 위치 변화 없다.*/
+    display: flex;
+    justify-content: left; /* 수평 중앙 정렬 */
+    align-items: left; /* 수직 중앙 정렬 */
+    width: 13%; /* 부모 너비에 맞춤 */
+    margin-left: calc(46% + 20px);
+    top: 2%;
+}
+
+.sticker1_content2-2{
+    position: absolute; /*얘 덕분에 위치 변화 없다.*/
+    display: flex;
+    justify-content: left; /* 수평 중앙 정렬 */
+    align-items: left; /* 수직 중앙 정렬 */
+    width: 0%; /* 부모 너비에 맞춤 */
+    margin-left: calc(13% + 20px);
+    top: 3%;
+}
+
+.sticker1_content2-3{
+    position: absolute; /*얘 덕분에 위치 변화 없다.*/
+    display: flex;
+    justify-content: left; /* 수평 중앙 정렬 */
+    align-items: left; /* 수직 중앙 정렬 */
+    width: 13%; /* 부모 너비에 맞춤 */
+    margin-left: calc(13% + 20px);
+    top: 3%;
+}
+
+.sticker1_img {
+    max-width: 100%; /* 이미지 최대 너비 제한 */
+    height: auto; /* 비율 유지 */
+    object-fit: contain; /* 이미지 비율 유지 */
+}
+
+.sticker2_img {
+    max-width: 100%; /* 이미지 최대 너비 제한 */
+    height: auto; /* 비율 유지 */
+    object-fit: contain; /* 이미지 비율 유지 */
+}
+
+/*컨텐츠1_박스1*/
+.MainContents1_Box1{
+    position: absolute;
+    margin-top: 1%;
+    margin-left: 3%;
+    width: 20%;
+    height: 7%;
+    display: flex; /* 텍스트 중앙 정렬을 위해 flex 사용 */
+    justify-content: left; /* 수평 중앙 정렬 */
+    align-items: left; /* 수직 중앙 정렬 */
+    font-weight: bold;
+}
+
+.MainContents1_Box1 p {
+    font-size: clamp(12px, 2vw, 40px); /* 최소 10px, 뷰포트 기준 2vw, 최대 18px */
+    color: rgb(255, 200, 0);
+    text-align: center;
+    margin: 0;
+}
+
+.MainContents1_Box1_HD{
+    position: absolute;
+    margin-top: 1%;
+    margin-left: 3%;
+    width: 20%;
+    height: 7%;
+    display: flex; /* 텍스트 중앙 정렬을 위해 flex 사용 */
+    justify-content: left; /* 수평 중앙 정렬 */
+    align-items: left; /* 수직 중앙 정렬 */
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.MainContents1_Box1_HD p {
+    font-size: clamp(8px, 1.5vw, 40px); /* 최소 10px, 뷰포트 기준 2vw, 최대 18px */
+    color: rgb(255, 200, 0);
+    text-align: left;
+    margin: 0;
+}
+
+/*컨텐츠1_박스2*/
+.MainContents1_Box2{
+    position: absolute;
+    margin-top: 57%;
+    margin-left: -37%;
+    width: 20%;
+    height: 7%;
+    display: flex; /* 텍스트 중앙 정렬을 위해 flex 사용 */
+    justify-content: left; /* 수평 중앙 정렬 */
+    align-items: left; /* 수직 중앙 정렬 */
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.MainContents1_Box2 p {
+    font-size: clamp(12px, 2vw, 30px); /* 최소 10px, 뷰포트 기준 2vw, 최대 18px */
+    color: rgb(255, 255, 255);
+    text-align: left;
+    margin: 0;
+}
+
+.MainContents1_Box2-2{
+    position: absolute;
+    margin-top: 57%;
+    margin-left: -37%;
+    width: 20%;
+    height: 7%;
+    display: flex; /* 텍스트 중앙 정렬을 위해 flex 사용 */
+    justify-content: left; /* 수평 중앙 정렬 */
+    align-items: left; /* 수직 중앙 정렬 */
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.MainContents1_Box2-2 p {
+    font-size: 0px; /* 최소 10px, 뷰포트 기준 2vw, 최대 18px */
+    color: rgb(255, 255, 255);
+    text-align: left;
+    margin: 0;
+}
+
+.MainContents1_Box2-3{
+    position: absolute;
+    margin-top: 57%;
+    margin-left: -37%;
+    width: 20%;
+    height: 7%;
+    display: flex; /* 텍스트 중앙 정렬을 위해 flex 사용 */
+    justify-content: left; /* 수평 중앙 정렬 */
+    align-items: left; /* 수직 중앙 정렬 */
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.MainContents1_Box2-3 p {
+    font-size: 0px; /* 최소 10px, 뷰포트 기준 2vw, 최대 18px */
+    color: rgb(255, 255, 255);
+    text-align: left;
+    margin: 0;
+}
+
+.MainContents1_Box2-4{
+    position: absolute;
+    margin-top: 57%;
+    margin-left: -37%;
+    width: 20%;
+    height: 7%;
+    display: flex; /* 텍스트 중앙 정렬을 위해 flex 사용 */
+    justify-content: left; /* 수평 중앙 정렬 */
+    align-items: left; /* 수직 중앙 정렬 */
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.MainContents1_Box2-4 p {
+    font-size: 0px; /* 최소 10px, 뷰포트 기준 2vw, 최대 18px */
+    color: rgb(255, 255, 255);
+    text-align: left;
+    margin: 0;
+}
+
+/*컨텐츠1_박스3*/
+.MainContents1_Box3{
+    position: absolute;
+    margin-top: 60%;
+    left: 65%;
+    width: 0%;
+    height: 7%;
+    display: flex; /* 텍스트 중앙 정렬을 위해 flex 사용 */
+    justify-content: center; /* 수평 중앙 정렬 */
+    align-items: left; /* 수직 중앙 정렬 */
+    white-space: nowrap;
+}
+
+.MainContents1_Box3 p {
+    font-size: 0; /* 최소 10px, 뷰포트 기준 2vw, 최대 18px */
+    color: rgb(255, 255, 255);
+    text-align: left;
+    margin: 0;
+}
+
+.MainContents1_Box3-2{
+    position: absolute;
+    margin-top: 60%;
+    left: 65%;
+    width: 0%;
+    height: 7%;
+    display: flex; /* 텍스트 중앙 정렬을 위해 flex 사용 */
+    justify-content: center; /* 수평 중앙 정렬 */
+    align-items: left; /* 수직 중앙 정렬 */
+    white-space: nowrap;
+}
+
+.MainContents1_Box3-2 p {
+    font-size: 0; /* 최소 10px, 뷰포트 기준 2vw, 최대 18px */
+    color: rgb(255, 255, 255);
+    text-align: left;
+    margin: 0;
+}
+
+.MainContents1_Box3-3{
+    position: absolute;
+    margin-top: 60%;
+    left: 65%;
+    width: 0%;
+    height: 7%;
+    display: flex; /* 텍스트 중앙 정렬을 위해 flex 사용 */
+    justify-content: center; /* 수평 중앙 정렬 */
+    align-items: left; /* 수직 중앙 정렬 */
+    white-space: nowrap;
+}
+
+.MainContents1_Box3-3 p {
+    font-size: 0; /* 최소 10px, 뷰포트 기준 2vw, 최대 18px */
+    color: rgb(255, 255, 255);
+    text-align: left;
+    margin: 0;
+}
+
+.MainContents1_Box3-3{
+    position: absolute;
+    margin-top: 60%;
+    left: 65%;
+    width: 0%;
+    height: 7%;
+    display: flex; /* 텍스트 중앙 정렬을 위해 flex 사용 */
+    justify-content: center; /* 수평 중앙 정렬 */
+    align-items: left; /* 수직 중앙 정렬 */
+    white-space: nowrap;
+}
+
+.MainContents1_Box3-3 p {
+    font-size: 0; /* 최소 10px, 뷰포트 기준 2vw, 최대 18px */
+    color: rgb(255, 255, 255);
+    text-align: left;
+    margin: 0;
+}
+
+.MainContents1_Box3-4{
+    position: absolute;
+    margin-top: 60%;
+    left: 65%;
+    width: 0%;
+    height: 7%;
+    display: flex; /* 텍스트 중앙 정렬을 위해 flex 사용 */
+    justify-content: center; /* 수평 중앙 정렬 */
+    align-items: left; /* 수직 중앙 정렬 */
+    white-space: nowrap;
+}
+
+.MainContents1_Box3-4 p {
+    font-size: 0; /* 최소 10px, 뷰포트 기준 2vw, 최대 18px */
+    color: rgb(255, 255, 255);
+    text-align: left;
+    margin: 0;
+}
+
+/*컨텐츠1_박스4*/
+.MainContents1_Box4{
+    position: absolute;
+    margin-top: 40%;
+    left: 180%;
+    width: 0%;
+    height: 7%;
+    display: flex; /* 텍스트 중앙 정렬을 위해 flex 사용 */
+    justify-content: center; /* 수평 중앙 정렬 */
+    align-items: right; /* 수직 중앙 정렬 */
+    white-space: nowrap;
+}
+
+.MainContents1_Box4 p {
+    font-size: 0; /* 최소 10px, 뷰포트 기준 2vw, 최대 18px */
+    color: rgb(255, 255, 255);
+    text-align: left;
+    margin: 0;
+}
+
+/*컨텐츠1_박스5*/
+.MainContents1_Box5{
+    position: absolute;
+    margin-top: 55%;
+    left: 186%;
+    width: 0%;
+    height: 7%;
+    display: flex; /* 텍스트 중앙 정렬을 위해 flex 사용 */
+    justify-content: center; /* 수평 중앙 정렬 */
+    align-items: right; /* 수직 중앙 정렬 */
+    white-space: nowrap;
+}
+
+.MainContents1_Box5 p {
+    font-size: 0; /* 최소 10px, 뷰포트 기준 2vw, 최대 18px */
+    color: rgb(255, 255, 255);
+    text-align: left;
+    margin: 0;
+}
+
+/*컨텐츠1_박스6*/
+.MainContents1_Box6{
+    position: absolute;
+    margin-top: 65%;
+    left: 185%;
+    width: 0%;
+    height: 7%;
+    display: flex; /* 텍스트 중앙 정렬을 위해 flex 사용 */
+    justify-content: center; /* 수평 중앙 정렬 */
+    align-items: left; /* 수직 중앙 정렬 */
+    white-space: nowrap;
+}
+
+.MainContents1_Box6 p {
+    font-size: 0; /* 최소 10px, 뷰포트 기준 2vw, 최대 18px */
+    color: rgb(255, 255, 255);
+    text-align: left;
+    margin: 0;
+}
+
+.text-box-in-main {
+    position: absolute; /* 절대 위치로 부모 안에서 배치 */
+    top: 12%; /* 부모 컨테이너의 아래쪽에서 10% 위 */
+    left: 2%; /* 왼쪽 여백 */
+    width: 0%; /* 상대적 너비 */
+    padding: 10px; /* 내부 여백 */
+    display: flex; /* 텍스트 정렬 */
+    flex-direction: column; /* 텍스트를 세로로 정렬 */
+    gap: 5px; /* 줄 간격 */
+    white-space: normal; /* 여러 줄로 나열 가능 */
+    overflow: visible; /* 넘침 허용 */
+}
+
+.text-box-in-main .text-item {
+    font-size: clamp(5px, 0.8vw, 30px); /* 반응형 폰트 크기 */
+    color: white; /* 텍스트 색상 */
+    text-align: left; /* 왼쪽 정렬 */
+    margin: 0; /* 기본 마진 제거 */
+    white-space: nowrap; /* 줄바꿈 방지 */
+    overflow: visible; /* 넘침 허용 */
+}
+
+/*@@@@@@@@컨텐츠2@@@@@@@@*/
+
+#ContentsContainer{
+    width: 89%;
+    height: 100%;
+    margin: auto;
+}
+
+.MainContents1 img{
+    width: 80%; /* 부모 너비를 기준으로 이미지 크기 조정 */
+    height: 80%; /* 비율 유지 */
+    object-fit: contain; /* 박스에 비율을 유지하면서 맞춤 */
+    border-radius: 8px; /* 둥근 모서리 추가 (선택 사항) */
+    display: block; /* 이미지를 블록 요소로 설정 */
+    max-height: 100%; /* 부모 높이를 넘지 않도록 설정 */
+    margin-left: 12%;
+    margin-top: 5%;
+}
+
+.Content1{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background-color: rgb(60, 60, 60);
+    margin-bottom: 30px;
+    margin-top: 5px;
+    border-radius: 30px;
+    border: 2px solid rgb(255, 183, 0);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    aspect-ratio: 4 / 1;
+}
+
+.Content2{
+    width: 100%;
+    display: flex;
+    background-color: rgb(60, 60, 60);
+    margin-bottom: 30px;
+    margin-top: 5px;
+    border-radius: 30px;
+    border: 3px solid rgb(255, 183, 0);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    aspect-ratio: 4 / 1;
+}
+
+.Content3{
+    width: 100%;
+    display: flex;
+    background-color: rgb(60, 60, 60);
+    margin-bottom: 30px;
+    margin-top: 5px;
+    border-radius: 30px;
+    border: 3px solid rgb(255, 183, 0);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    aspect-ratio: 4 / 1;
+}
+
+.Content4{
+    width: 100%;
+    display: flex;
+    background-color: rgb(60, 60, 60);
+    margin-bottom: 30px;
+    margin-top: 5px;
+    border-radius: 30px;
+    border: 3px solid rgb(255, 183, 0);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    aspect-ratio: 4 / 1;
+}
+
+/*APPLE iArm Pro Max*/
+.text-item:first-child {
+    position: absolute; /* 부모(MainContents2)를 기준으로 고정 */
+    top: 3%; /* 부모 박스(MainContents2)의 상단에서 일정 간격 */
+    left: -18%; /* 부모 박스(MainContents2)의 왼쪽에서 일정 간격 */
+    font-size: calc(5px + 1vw); /* 기본 폰트 크기를 조금 키우고 페이지 크기에 따라 증가 */
+    font-weight: bold;
+    color: white;
+    max-width: 95%; /* 부모 박스 너비의 95%로 제한 */
+    white-space: nowrap; /* 줄바꿈 방지 */
+    overflow: hidden; /* 넘침 방지 */
+    text-overflow: ellipsis; /* 넘칠 경우 말줄임 표시 */
+}
+
+.texts {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column; /* 텍스트를 세로로 배치 */
+    justify-content: center; /* 세로 중앙 정렬 */
+    align-items: center; /* 가로 중앙 정렬 */
+    gap: 10px; /* 텍스트 간 간격 */
+    position: relative; /* 상대 위치 지정 */
+}
+
+.texts-2 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column; /* 텍스트를 세로로 배치 */
+    justify-content: center; /* 세로 중앙 정렬 */
+    align-items: center; /* 가로 중앙 정렬 */
+    gap: 10px; /* 텍스트 간 간격 */
+    position: relative; /* 상대 위치 지정 */
+    left: -6%;
+}
+
+.texts-3 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column; /* 텍스트를 세로로 배치 */
+    justify-content: center; /* 세로 중앙 정렬 */
+    align-items: center; /* 가로 중앙 정렬 */
+    gap: 10px; /* 텍스트 간 간격 */
+    position: relative; /* 상대 위치 지정 */
+    left: 1%;
+}
+
+.texts-4 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column; /* 텍스트를 세로로 배치 */
+    justify-content: center; /* 세로 중앙 정렬 */
+    align-items: center; /* 가로 중앙 정렬 */
+    gap: 10px; /* 텍스트 간 간격 */
+    position: relative; /* 상대 위치 지정 */
+    left: -7%;
+}
+
+.text-item {
+    font-size: clamp(8px, 1vw, 13px);
+    color: white;
+    text-align: center;
+    width: 90%; /* 부모 너비 기준 */
+    max-width: 200px;
+    word-wrap: break-word; /* 텍스트 줄바꿈 */
+}
+
+/* 추가된 텍스트 섹션 */
+.additional-text-box1 {
+    position: absolute;
+    margin-top: 40%;
+    margin-left: 1%;
+    width: 25%;
+    height: 25%;
+    border-radius: 10px;
+    display: flex; /* 텍스트 중앙 정렬을 위해 flex 사용 */
+    justify-content: center; /* 텍스트를 왼쪽 정렬 */
+    align-items: center; /* 수직 중앙 정렬 */
+    padding-left: 10px; /* 왼쪽에 패딩 추가 */
+    flex-direction: column; /* 텍스트를 세로로 배치 */
+    gap: 7%;
+}
+
+/* 추가된 텍스트 스타일 */
+.additional-text-box1 .text-item {
+    font-size: clamp(5px, 1vw, 18px); /* 반응형 폰트 크기 */
+    color: rgb(151, 151, 151);
+    text-align: left;
+    word-wrap: nowrap;
+    margin: 0;
+}
+
+/* 추가된 텍스트 섹션 */
+.additional-text-box2 {
+    position: absolute;
+    margin-top: 40%;
+    margin-left: 25%;
+    width: 40%;
+    height: 25%;
+    border-radius: 10px;
+    display: flex; /* 텍스트 중앙 정렬을 위해 flex 사용 */
+    justify-content: center; /* 텍스트를 왼쪽 정렬 */
+    align-items: center; /* 수직 중앙 정렬 */
+    padding-left: 10px; /* 왼쪽에 패딩 추가 */
+    flex-direction: column; /* 텍스트를 세로로 배치 */
+    gap: 7%;
+}
+
+/* 추가된 텍스트 스타일 */
+.additional-text-box2 .text-item {
+    font-size: clamp(5px, 1vw, 18px); /* 반응형 폰트 크기 */
+    color: lightgray;
+    text-align: left;
+    word-wrap: break-word;
+    margin: 0;
+}
+
+/*박스1*/
+
+.content1_Box1{
+    position: absolute;
+    margin-top: 10%;
+    margin-left: 5%;
+    width: 20%;
+    height: 7%;
+    background-color: black;
+    border-radius: 10px;
+    display: flex; /* 텍스트 중앙 정렬을 위해 flex 사용 */
+    justify-content: center; /* 수평 중앙 정렬 */
+    align-items: center; /* 수직 중앙 정렬 */
+}
+
+.content1_Box1 p {
+    font-size: clamp(8px, 1vw, 18px); /* 최소 10px, 뷰포트 기준 2vw, 최대 18px */
+    color: white;
+    text-align: center;
+    margin: 0;
+}
+
+/*박스2*/
+
+.content1_Box2{
+    position: absolute;
+    margin-top: 10%;
+    margin-left: 28%;
+    width: 20%;
+    height: 7%;
+    background-color: black;
+    border-radius: 10px;
+    display: flex; /* 텍스트 중앙 정렬을 위해 flex 사용 */
+    justify-content: center; /* 수평 중앙 정렬 */
+    align-items: center; /* 수직 중앙 정렬 */
+}
+
+.content1_Box2 p {
+    font-size: clamp(8px, 1vw, 18px); /* 최소 10px, 뷰포트 기준 2vw, 최대 18px */
+    color: white;
+    text-align: center;
+    margin: 0;
+}
+
+/*박스3*/
+
+.content1_Box3{
+    position: absolute;
+    margin-top: 30%;
+    margin-left: 3.5%;
+    width: 90%;
+    height: 12%;
+    background-color: black;
+    border-radius: 10px;
+    display: flex; /* 텍스트 중앙 정렬을 위해 flex 사용 */
+    justify-content: flex-start; /* 텍스트를 왼쪽 정렬 */
+    align-items: center; /* 수직 중앙 정렬 */
+    padding-left: 10px; /* 왼쪽에 패딩 추가 */
+}
+
+.content1_Box3 p {
+    font-size: clamp(8px, 1vw, 18px);
+    color: white;
+    text-align: left;
+    margin-left: 10px; /* 텍스트 왼쪽 여백 */
+    margin: 0; /* 다른 여백은 제거 */
+    word-wrap: nowrap; /* 텍스트 줄바꿈 */
+}
+
+/*아이콘*/
+.DownIcon{
+    display: flex;
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    margin-left: 90%;
+    margin-top: 1%;
+}
+
+.ShareIcon{
+    display: flex;
+    position: absolute;
+    width: 8%;
+    height: 8%;
+    margin-left: 85%;
+    margin-top: 2%;
+}
+
+/*쿠폰 사용 시 할인 금액 - 가격*/
+.discount-text {
+    display: flex;
+    justify-content: space-between; /* 텍스트 간 자동 조정 */
+    align-items: center; /* 수직 중앙 정렬 */
+    padding: 0 5%; /* 좌우 여백 */
+    gap: min(10vw, 300px); /* 간격 유동적으로 조정 */
+    white-space: nowrap; /* 줄넘김 방지 */
+    overflow: hidden; /* 컨테이너 밖으로 나가지 않도록 */
+    font-size: calc(1px + 0.7vw); /* 텍스트 크기 유동 조정 */
+}
+
+.discount-label {
+    flex: 1; /* 남는 공간을 차지 */
+    text-align: left; /* 좌측 정렬 */
+    white-space: nowrap; /* 줄넘김 방지 */
+    overflow: hidden; /* 넘침 방지 */
+}
+
+.discount-value {
+    left: 75%;
+    position: absolute;
+    flex-shrink: 0; /* 크기 고정 */
+    text-align: right; /* 우측 정렬 */
+    white-space: nowrap; /* 줄넘김 방지 */
+    overflow: hidden; /* 넘침 방지 */
+    margin-left: auto; /* 간격 확보 */
+}
+
+/*박스4*/
+
+.content1_Box4{
+    position: absolute;
+    margin-top: 60%;
+    margin-left: 3.5%;
+    width: 90%;
+    height: 8%;
+    background-color: black;
+    border-radius: 10px;
+    display: flex; /* 텍스트 중앙 정렬을 위해 flex 사용 */
+    justify-content: center; /* 텍스트를 왼쪽 정렬 */
+    align-items: center; /* 수직 중앙 정렬 */
+    padding-left: 10px; /* 왼쪽에 패딩 추가 */
+}
+
+.content1_Box4 p {
+    font-size: clamp(8px, 1vw, 18px);
+    color: white;
+    text-align: left;
+    margin-left: 10px; /* 텍스트 왼쪽 여백 */
+    margin: 0; /* 다른 여백은 제거 */
+}
+
+/*박스5*/
+
+.content1_Box5{
+    position: absolute;
+    margin-top: 20%;
+    margin-left: 5%;
+    width: 10%;
+    height: 8%;
+    border-radius: 10px;
+    display: flex; /* 텍스트 중앙 정렬을 위해 flex 사용 */
+    justify-content: center; /* 텍스트를 왼쪽 정렬 */
+    align-items: center; /* 수직 중앙 정렬 */
+    padding-left: 10px; /* 왼쪽에 패딩 추가 */
+}
+
+.content1_Box5 p {
+    font-size: clamp(6px, 0.9vw, 40px);
+    color: rgb(133, 133, 133);
+    text-align: left;
+    margin-left: 10px; /* 텍스트 왼쪽 여백 */
+    margin: 0; /* 다른 여백은 제거 */
+}
+
+/*텍스트 중앙선*/
+.text-with-custom-line {
+    text-decoration: line-through;
+    text-decoration-color: rgb(133, 133, 133); /* 중앙선 색상 */
+    text-decoration-style: dashed; /* 중앙선 스타일 (solid, dashed, dotted 등) */
+}
+
+
+/*박스6*/
+
+.content1_Box6{
+    position: absolute;
+    margin-top: 20%;
+    margin-left: 23%;
+    width: 10%;
+    height: 8%;
+    border-radius: 10px;
+    display: flex; /* 텍스트 중앙 정렬을 위해 flex 사용 */
+    justify-content: center; /* 텍스트를 왼쪽 정렬 */
+    align-items: center; /* 수직 중앙 정렬 */
+    padding-left: 10px; /* 왼쪽에 패딩 추가 */
+}
+
+.content1_Box6 p {
+    font-size: clamp(8px, 1vw, 60px);
+    color: white;
+    text-align: left;
+    margin-left: 10px; /* 텍스트 왼쪽 여백 */
+    margin: 0; /* 다른 여백은 제거 */
+    white-space: nowrap; /* 줄넘김 방지 */
+}
+
+.MainContents1{
+    position: relative;
+    flex: 1;
+    display: flex;
+    width: 100%;
+    margin: 3px;
+    background-color: rgb(60, 60, 60);
+    border-radius: 30px;
+    height: auto;
+    object-fit: contain;
+}
+
+.MainContents2 {
+    position: relative;
+    flex: 0.5;
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    height: auto;
+    object-fit: contain;
+    margin: 3px;
+    background-color: rgb(60, 60, 60);
+    border-radius: 20px;
+    font-size: 16px; /* 폰트 크기 조정 */
+    color: white; /* 텍스트 색상 */
+    padding: 10px; /* 텍스트와 테두리 간의 간격 */
+}
+
+.star5 {
+    position: absolute; /*얘 덕분에 위치 변화 없다.*/
+    width: 50%;
+    display: flex;
+    justify-content: center; /* 수평 중앙 정렬 */
+    align-items: center; /* 수직 중앙 정렬 */
+    width: 100%; /* 부모 너비에 맞춤 */
+    margin-left: calc(15% + 20px);
+    top: 5%;
+}
+
+.star4 {
+    position: absolute; /*얘 덕분에 위치 변화 없다.*/
+    width: 50%;
+    display: flex;
+    justify-content: center; /* 수평 중앙 정렬 */
+    align-items: center; /* 수직 중앙 정렬 */
+    width: 100%; /* 부모 너비에 맞춤 */
+    margin-left: calc(15% + 20px);
+    top: 5%;
+}
+
+.star5_img {
+    max-width: 30%; /* 이미지 최대 너비 제한 */
+    height: auto; /* 비율 유지 */
+    object-fit: contain; /* 이미지 비율 유지 */
+}
+
+.star4_img {
+    max-width: 30%; /* 이미지 최대 너비 제한 */
+    height: auto; /* 비율 유지 */
+    object-fit: contain; /* 이미지 비율 유지 */
+}
+
+.MainContents2 p {
+    margin: 0; /* p 태그 기본 margin 제거 */
+    text-align: center; /* 텍스트 중앙 정렬 */
+}
+
+.HAdvertising{
+    height: 350px;
+    margin: 3px;
+}
+
+.mirrored-image {
+    transform: scaleX(-1); /* 좌우반전 */
+}
+
+@media (max-width: 768px)
+{
+
+/*@@@@@@@@메뉴박스@@@@@@@@*/
+
+#TopTabContainer{
+    width: 90%;
+    height: 100%;
+    margin: auto;
+    order: 2;
+}
+
+/*메뉴 뒷 배경 박스*/
+.Top{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(40, 40, 40);
+    align-items: center;
+    padding: 12px 20px;
+    border-radius: 15px;
+    margin-top: 3%;
+}
+
+/*메뉴텍스트*/
+.topTab{
+    width: 30%;
+    margin: 3px;
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    font-size: clamp(18px, 1vw, 40px);
+    gap: 30%;
+    white-space: nowrap;
+    margin-left: -40%;
+}
+
+/*선택 시 나오는 네모박스*/
+.topTab li{
+    flex: 1;
+    text-align: center;
+    padding: 8px 10%;
+    border-radius: 10px;
+    position: relative; /* 밑줄을 제어하기 위한 설정 */
+}
+
+.topTab li::after {
+    content: ''; /* 비어있는 가상 요소 */
+    position: absolute;
+    bottom: -20%;
+    left: 25%;
+    width: 0%;
+    height: 2px; /* 밑줄 두께 */
+    background-color: white; /* 밑줄 색상 */
+    transition: width 0.3s ease; /* 부드러운 확장 효과 */
+}
+
+/* 마우스 오버 시 밑줄 확장 */
+.topTab li:hover::after {
+    width: 50%; /* 밑줄을 가로 전체로 확장 */
+    bottom: -20%;
+    left: 25%;
+}
+
+
+.topTab li a{
+    color: white;
+    text-decoration: none;
+}
+
+/*@@@@@@@@슬라이드@@@@@@@@*/
+
+.Slider_Box{
+    width: 90%;
+    height: 250px;
+    margin-left: 5%;
+    overflow: hidden;
+    display: flex;
+    position: relative;
+    align-items: center;
+    margin-top: -20px;
+    top: 50px;
+}
+.Inner_Slider_Box {
+    display: flex; /* 이미지를 한 줄에 나란히 배치 */
+    width: calc(768px * 3); /* 총 슬라이드 너비 (이미지 개수만큼) */
+    height: 100%;
+    transition: transform 0.5s ease-in-out; /* 부드러운 전환 효과 */
+}
+.Slider_img_1{
+    width: 100%;
+    height: 100%;
+    flex-shrink: 0
+}
+.Slider_img_2{
+    width: 100%;
+    height: 100%;
+    flex-shrink: 0
+}
+.Slider_img_3{
+    width: 100%;
+    height: 100%;
+    flex-shrink: 0
+}
+
+/*@@@@@@@@컨텐츠1@@@@@@@@*/
+.star5_2 {
+    position: absolute; /*얘 덕분에 위치 변화 없다.*/
+    display: flex;
+    justify-content: center; /* 수평 중앙 정렬 */
+    align-items: center; /* 수직 중앙 정렬 */
+    width: 80%; /* 부모 너비에 맞춤 */
+    margin-left: calc(-175% + 20px);
+    top: 60%;
+}
+
+.star4_2 {
+    position: absolute; /*얘 덕분에 위치 변화 없다.*/
+    display: flex;
+    justify-content: center; /* 수평 중앙 정렬 */
+    align-items: center; /* 수직 중앙 정렬 */
+    width: 80%; /* 부모 너비에 맞춤 */
+    margin-left: calc(-175% + 20px);
+    top: 60%;
+}
+
+.sticker1 {
+    position: absolute; /*얘 덕분에 위치 변화 없다.*/
+    width: 100%;
+    display: flex;
+    justify-content: center; /* 수평 중앙 정렬 */
+    align-items: center; /* 수직 중앙 정렬 */
+    width: 40%; /* 부모 너비에 맞춤 */
+    margin-left: calc(-115% + 20px);
+    top: -2%;
+}
+
+.sticker2 {
+    position: absolute; /*얘 덕분에 위치 변화 없다.*/
+    display: flex;
+    justify-content: left; /* 수평 중앙 정렬 */
+    align-items: left; /* 수직 중앙 정렬 */
+    width: 22%; /* 부모 너비에 맞춤 */
+    margin-left: calc(-130% + 20px);
+    top: -5.5%;
+}
+
+.sticker1_content2{
+    position: absolute; /*얘 덕분에 위치 변화 없다.*/
+    display: flex;
+    justify-content: left; /* 수평 중앙 정렬 */
+    align-items: left; /* 수직 중앙 정렬 */
+    width: 0%; /* 부모 너비에 맞춤 */
+    margin-left: calc(48% + 20px);
+    top: 2%;
+}
+
+.sticker1_content2-2{
+    position: absolute; /*얘 덕분에 위치 변화 없다.*/
+    width: 100%;
+    display: flex;
+    justify-content: center; /* 수평 중앙 정렬 */
+    align-items: center; /* 수직 중앙 정렬 */
+    width: 40%; /* 부모 너비에 맞춤 */
+    margin-left: calc(-60% + 20px);
+    top: -2%;
+}
+
+.sticker1_content2-3{
+    position: absolute; /*얘 덕분에 위치 변화 없다.*/
+    display: flex;
+    justify-content: left; /* 수평 중앙 정렬 */
+    align-items: left; /* 수직 중앙 정렬 */
+    width: 0%; /* 부모 너비에 맞춤 */
+    margin-left: calc(13% + 20px);
+    top: 3%;
+}
+
+.sticker1_img {
+    max-width: 90%; /* 이미지 최대 너비 제한 */
+    height: auto; /* 비율 유지 */
+    object-fit: contain; /* 이미지 비율 유지 */
+}
+
+.MainContents1_Box1{
+    position: absolute;
+    margin-top: -60%;
+    margin-left: 280%;
+    width: 20%;
+    height: 7%;
+    display: flex; /* 텍스트 중앙 정렬을 위해 flex 사용 */
+    justify-content: center; /* 수평 중앙 정렬 */
+    align-items: center; /* 수직 중앙 정렬 */
+    font-weight: bold;
+}
+
+.MainContents1_Box1 p {
+    font-size: clamp(23px, 2vw, 30px); /* 최소 10px, 뷰포트 기준 2vw, 최대 18px */
+    color: rgb(255, 200, 0);
+    text-align: center;
+    margin: 0;
+}
+
+.MainContents1_Box1_HD{
+    position: absolute;
+    margin-top: -64%;
+    margin-left: 150%;
+    width: 20%;
+    height: 7%;
+    display: flex; /* 텍스트 중앙 정렬을 위해 flex 사용 */
+    justify-content: left; /* 수평 중앙 정렬 */
+    align-items: left; /* 수직 중앙 정렬 */
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.MainContents1_Box1_HD p {
+    font-size: clamp(12px, 2.4vw, 40px); /* 최소 10px, 뷰포트 기준 2vw, 최대 18px */
+    color: rgb(255, 200, 0);
+    text-align: center;
+    margin: 0;
+}
+
+/*컨텐츠1_박스2*/
+.MainContents1_Box2{
+    position: absolute;
+    margin-top: 45%;
+    left: 45%;
+    width: 20%;
+    height: 7%;
+    display: flex; /* 텍스트 중앙 정렬을 위해 flex 사용 */
+    justify-content: center; /* 수평 중앙 정렬 */
+    align-items: left; /* 수직 중앙 정렬 */
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.MainContents1_Box2 p {
+    font-size: clamp(10px, 2.5vw, 20px); /* 최소 10px, 뷰포트 기준 2vw, 최대 18px */
+    color: rgb(255, 255, 255);
+    text-align: left;
+    margin: 0;
+}
+
+.MainContents1_Box2-2{
+    position: absolute;
+    margin-top: 45%;
+    margin-left: -65%;
+    width: 20%;
+    height: 7%;
+    display: flex; /* 텍스트 중앙 정렬을 위해 flex 사용 */
+    justify-content: left; /* 수평 중앙 정렬 */
+    align-items: left; /* 수직 중앙 정렬 */
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.MainContents1_Box2-2 p {
+    font-size: clamp(12px, 2vw, 30px); /* 최소 10px, 뷰포트 기준 2vw, 최대 18px */
+    color: rgb(255, 255, 255);
+    text-align: left;
+    margin: 0;
+}
+
+.MainContents1_Box2-3{
+    position: absolute;
+    margin-top: 45%;
+    margin-left: -65%;
+    width: 20%;
+    height: 7%;
+    display: flex; /* 텍스트 중앙 정렬을 위해 flex 사용 */
+    justify-content: left; /* 수평 중앙 정렬 */
+    align-items: left; /* 수직 중앙 정렬 */
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.MainContents1_Box2-3 p {
+    font-size: clamp(12px, 2vw, 30px); /* 최소 10px, 뷰포트 기준 2vw, 최대 18px */
+    color: rgb(255, 255, 255);
+    text-align: left;
+    margin: 0;
+}
+
+.MainContents1_Box2-4{
+    position: absolute;
+    margin-top: 45%;
+    margin-left: -65%;
+    width: 20%;
+    height: 7%;
+    display: flex; /* 텍스트 중앙 정렬을 위해 flex 사용 */
+    justify-content: left; /* 수평 중앙 정렬 */
+    align-items: left; /* 수직 중앙 정렬 */
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.MainContents1_Box2-4 p {
+    font-size: clamp(12px, 2vw, 30px); /* 최소 10px, 뷰포트 기준 2vw, 최대 18px */
+    color: rgb(255, 255, 255);
+    text-align: left;
+    margin: 0;
+}
+
+/*컨텐츠1_박스3*/
+.MainContents1_Box3{
+    position: absolute;
+    margin-top: 60%;
+    left: 18%;
+    width: 20%;
+    height: 7%;
+    display: flex; /* 텍스트 중앙 정렬을 위해 flex 사용 */
+    justify-content: center; /* 수평 중앙 정렬 */
+    align-items: left; /* 수직 중앙 정렬 */
+    white-space: nowrap;
+}
+
+.MainContents1_Box3 p {
+    font-size: clamp(10px, 2.5vw, 20px); /* 최소 10px, 뷰포트 기준 2vw, 최대 18px */
+    color: rgb(255, 255, 255);
+    text-align: left;
+    margin: 0;
+}
+
+.MainContents1_Box3-2{
+    position: absolute;
+    margin-top: 60%;
+    left: 20%;
+    width: 20%;
+    height: 7%;
+    display: flex; /* 텍스트 중앙 정렬을 위해 flex 사용 */
+    justify-content: center; /* 수평 중앙 정렬 */
+    align-items: left; /* 수직 중앙 정렬 */
+    white-space: nowrap;
+}
+
+.MainContents1_Box3-2 p {
+    font-size: clamp(10px, 2.5vw, 20px); /* 최소 10px, 뷰포트 기준 2vw, 최대 18px */
+    color: rgb(255, 255, 255);
+    text-align: left;
+    margin: 0;
+}
+
+.MainContents1_Box3-3{
+    position: absolute;
+    margin-top: 60%;
+    left: 29%;
+    width: 20%;
+    height: 7%;
+    display: flex; /* 텍스트 중앙 정렬을 위해 flex 사용 */
+    justify-content: center; /* 수평 중앙 정렬 */
+    align-items: left; /* 수직 중앙 정렬 */
+    white-space: nowrap;
+}
+
+.MainContents1_Box3-3 p {
+    font-size: clamp(10px, 2.5vw, 20px); /* 최소 10px, 뷰포트 기준 2vw, 최대 18px */
+    color: rgb(255, 255, 255);
+    text-align: left;
+    margin: 0;
+}
+
+.MainContents1_Box3-4{
+    position: absolute;
+    margin-top: 60%;
+    left: 30.5%;
+    width: 20%;
+    height: 7%;
+    display: flex; /* 텍스트 중앙 정렬을 위해 flex 사용 */
+    justify-content: center; /* 수평 중앙 정렬 */
+    align-items: left; /* 수직 중앙 정렬 */
+    white-space: nowrap;
+}
+
+.MainContents1_Box3-4 p {
+    font-size: clamp(10px, 2.5vw, 20px); /* 최소 10px, 뷰포트 기준 2vw, 최대 18px */
+    color: rgb(255, 255, 255);
+    text-align: left;
+    margin: 0;
+}
+
+/*컨텐츠1_박스4*/
+.MainContents1_Box4{
+    position: absolute;
+    margin-top: 40%;
+    left: 180%;
+    width: 20%;
+    height: 7%;
+    display: flex; /* 텍스트 중앙 정렬을 위해 flex 사용 */
+    justify-content: center; /* 수평 중앙 정렬 */
+    align-items: right; /* 수직 중앙 정렬 */
+    white-space: nowrap;
+}
+
+.MainContents1_Box4 p {
+    font-size: clamp(8px, 1.5vw, 20px); /* 최소 10px, 뷰포트 기준 2vw, 최대 18px */
+    color: rgb(255, 255, 255);
+    text-align: left;
+    margin: 0;
+}
+
+/*컨텐츠1_박스5*/
+.MainContents1_Box5{
+    position: absolute;
+    margin-top: 55%;
+    left: 186%;
+    width: 20%;
+    height: 7%;
+    display: flex; /* 텍스트 중앙 정렬을 위해 flex 사용 */
+    justify-content: center; /* 수평 중앙 정렬 */
+    align-items: right; /* 수직 중앙 정렬 */
+    white-space: nowrap;
+}
+
+.MainContents1_Box5 p {
+    font-size: clamp(7px, 1.5vw, 20px); /* 최소 10px, 뷰포트 기준 2vw, 최대 18px */
+    color: rgb(133, 133, 133);
+    text-align: left;
+    margin: 0;
+}
+
+/*컨텐츠1_박스6*/
+.MainContents1_Box6{
+    position: absolute;
+    margin-top: 65%;
+    left: 185%;
+    width: 20%;
+    height: 7%;
+    display: flex; /* 텍스트 중앙 정렬을 위해 flex 사용 */
+    justify-content: center; /* 수평 중앙 정렬 */
+    align-items: left; /* 수직 중앙 정렬 */
+    white-space: nowrap;
+}
+
+.MainContents1_Box6 p {
+    font-size: clamp(12px, 1.5vw, 20px); /* 최소 10px, 뷰포트 기준 2vw, 최대 18px */
+    color: rgb(255, 255, 255);
+    text-align: left;
+    margin: 0;
+}
+
+.text-box-in-main {
+    position: absolute; /* 절대 위치로 부모 안에서 배치 */
+    top: 15%; /* 부모 컨테이너의 아래쪽에서 10% 위 */
+    left: 2%; /* 왼쪽 여백 */
+    width: 80%; /* 상대적 너비 */
+    padding: 10px; /* 내부 여백 */
+    display: flex; /* 텍스트 정렬 */
+    flex-direction: column; /* 텍스트를 세로로 정렬 */
+    gap: 5px; /* 줄 간격 */
+    white-space: normal; /* 여러 줄로 나열 가능 */
+    overflow: visible; /* 넘침 허용 */
+}
+
+.text-box-in-main .text-item {
+    font-size: clamp(8px, 1.5vw, 18px); /* 반응형 폰트 크기 */
+    color: white; /* 텍스트 색상 */
+    text-align: left; /* 왼쪽 정렬 */
+    margin: 0; /* 기본 마진 제거 */
+    white-space: nowrap; /* 줄바꿈 방지 */
+    overflow: visible; /* 넘침 허용 */
+}
+
+    /*@@@@@@@@컨텐츠2@@@@@@@@*/
+
+    #ContentsContainer{
+        width: 90%;
+        order: 3;
+    }
+
+    .Content1,
+    .Content2,
+    .Content3,
+    .Content4 {
+        width: 100%;
+        display: flex;
+        background-color: rgb(65, 65, 65);
+        margin-bottom: 20px;
+        margin-top: 20px;
+        border-radius: 20px;
+        border: 1px solid rgb(255, 183, 0);
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        aspect-ratio: 4 / 1.5;
+    }
+    
+    #finalContent{
+        flex-direction: row;
+        justify-content: center;
+
+/* 특정 부분 지울 때 사용
+        visibility: hidden;
+        display: none;
+*/
+    }
+    .MainContents1{
+        position: relative;
+        flex: 1;
+        display: flex;
+        width: 100%;
+        justify-content: center; /* 가로 정렬: 중앙 */
+        align-items: center; /* 세로 정렬: 중앙 */
+        width: 100%; /* 부모 너비를 100%로 설정 */
+        height: auto; /* 높이를 자동으로 조정 */
+        margin: 3px;
+        background-color: rgb(65, 65, 65);
+        border-radius: 30px;
+    }
+    
+    .MainContents2 {
+        flex: 1;
+        width: 25%;
+        margin: 3px;
+        background-color: rgb(95, 95, 95);
+        border-radius: 8px;
+        display: flex;
+        justify-content: center; /* 가운데 정렬 */
+        align-items: center; /* 세로 중앙 정렬 */
+        font-size: 16px; /* 폰트 크기 조정 */
+        color: white; /* 텍스트 색상 */
+        padding: 10px; /* 텍스트와 테두리 간의 간격 */
+        visibility: hidden;
+        display: flex;
+    }
+    
+    .MainContents2 p {
+        margin: 0; /* p 태그 기본 margin 제거 */
+        text-align: center; /* 텍스트 중앙 정렬 */
+        visibility: hidden;
+        display: none;
+    }
+
+    .MainContents1 img,
+.MainContents2 img {
+    width: 150%; /* 부모 너비를 기준으로 이미지 크기 조정 */
+    height: 100%; /* 비율 유지 */
+    object-fit: contain; /* 박스에 비율을 유지하면서 맞춤 */
+    border-radius: 8px; /* 둥근 모서리 추가 (선택 사항) */
+    display: block; /* 이미지를 블록 요소로 설정 */
+    max-height: 100%; /* 부모 높이를 넘지 않도록 설정 */
+    margin-left: 130%;
+    margin-top: 10px;
+}
+    
+    .HAdvertising{
+        height: 250px;
+        margin: 3px;
+    }
+
+    .HMainContents{
+        height: 100%;
+        margin-top: 15px;
+    }
+    
+    body{
+        background-color: rgb(0, 0, 0);
+        display: flex;
+        flex-direction: column;
+    }
+}
