@@ -82,8 +82,8 @@ document.addEventListener("DOMContentLoaded", () => {
     function updateSliderImages() {
         const isMobile = window.matchMedia("(max-width: 768px)").matches;
         const newImages = isMobile
-            ? ["/image/adver/1.png", "/image/adver/2.png", "/image/adver/3.png"]
-            : ["/image/adver/Pye_V02.png", "/image/adver/Teeth_V02.png", "/image/adver/Brain_V02.png"];
+            ? ["image/adver/1.png", "image/adver/2.png", "image/adver/3.png"]
+            : ["image/adver/Pye_V02.png", "image/adver/Teeth_V02.png", "image/adver/Brain_V02.png"];
 
         slides.forEach((slide, index) => {
             slide.src = newImages[index] || ""; // 새로운 이미지 경로 설정
